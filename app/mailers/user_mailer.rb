@@ -4,7 +4,8 @@ class UserMailer < ApplicationMailer
   def order_receipt(order)
     @user = order.email
     @id = order.id
+    @order = order
     @url  = 'http://localhost:3000/login'
-    mail(to: @user.email, subject: "Your order is placed #{@id} ")
+    mail(to: @user, subject: "Your order is placed #{@id} ")
   end
 end
