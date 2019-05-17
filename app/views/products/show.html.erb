@@ -22,13 +22,15 @@
             <dd><%= @product.price %></dd>
           </dl>
         </div>
-      <div >
-        <h2>See Reviews </h2>
-         <% @reviews.each do |c| %>
-        <p><%= c.description %> - <%= c.rating %></p>
-      </div>
-      <% end %>
-    </div>
+
+        <div class="col-sm-8">
+          <dl class="dl-horizontal">
+            <dt> Reviews </dt>
+            <% @reviews.each do |c| %>
+            <dd><%= c.description %> - <%= c.rating %></dd>
+            <% end %>
+          </dl>
+        </div>
   </article>
 
 </section>
