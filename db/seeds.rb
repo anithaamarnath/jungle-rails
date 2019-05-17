@@ -138,7 +138,7 @@ user1 = User.create! name: 'anitha', email: 'anitha@gmail.com', password:'anitha
 user2 = User.create! name: 'Karina', email: 'karina@gmail.com', password:'karina'
 
 rev1 = Review.create! product: pro1, user: user1, description: 'I really like this bookshelves', rating:4
-rev2 = Review.create! product: pro1, user: user2, description: 'I fav Bookshelf', rating:3
+rev2 = Review.create! product: pro1, user: user2, description: 'My fav Bookshelf', rating:3
 rev3 = Review.create! product: pro2, user: user1, description: 'My cutter is not cutting ', rating:1
 
 
