@@ -29,6 +29,8 @@ cat1 = Category.find_or_create_by! name: 'Apparel'
 cat2 = Category.find_or_create_by! name: 'Electronics'
 cat3 = Category.find_or_create_by! name: 'Furniture'
 
+
+
 ## PRODUCTS
 
 puts "Re-creating Products ..."
@@ -92,7 +94,7 @@ cat2.products.create!({
   price: 164.49
 })
 
-cat2.products.create!({
+pro2 = cat2.products.create!({
   name:  'Hotdog Slicer',
   description: Faker::Hipster.paragraph(4),
   image: open_asset('electronics2.jpg'),
@@ -124,13 +126,20 @@ cat3.products.create!({
   price: 987.65
 })
 
-cat3.products.create!({
+pro1= cat3.products.create!({
   name:  'Red Bookshelf',
   description: Faker::Hipster.paragraph(4),
   image: open_asset('furniture3.jpg'),
   quantity: 23,
   price: 2_483.75
 })
+
+user1 = User.create! name: 'anitha', email: 'anitha@gmail.com', password:'anitha'
+user2 = User.create! name: 'Karina', email: 'karina@gmail.com', password:'karina'
+
+rev1 = Review.create! product: pro1, user: user1, description: 'I really like this bookshelves', rating:4
+rev2 = Review.create! product: pro1, user: user2, description: 'I fav Bookshelf', rating:3
+rev3 = Review.create! product: pro2, user: user1, description: 'My cutter is not cutting ', rating:1
 
 
 puts "DONE!"
