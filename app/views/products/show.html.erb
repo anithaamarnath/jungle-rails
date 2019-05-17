@@ -40,7 +40,10 @@
           <dt> Reviews </dt>
           <% @reviews.each do |c| %>
 
-          <dd><%= c.user.name %> : <%= c.description %> - <% c.rating.times do %><span class="glyphicon glyphicon-star text-danger"></span> <% end %></dd>
+          <dd><%= c.user.name %> : <%= c.description %> - <% c.rating.times do %>
+            <span class="glyphicon glyphicon-star text-danger"></span>
+            <% end %>
+          </dd>
           <% end %>
         </dl>
         </div>
