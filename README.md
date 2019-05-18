@@ -29,4 +29,17 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 
 
 ## Screenshot
+!["Screenshot of Login page"](https://github.com/anithaamarnath/jungle-rails/blob/master/screenshot/login.png)
+
+!["Screenshot of Home page"](https://github.com/anithaamarnath/jungle-rails/blob/master/screenshot/home.png)
+
+!["Screenshot of My Cart page"](https://github.com/anithaamarnath/jungle-rails/blob/master/screenshot/mycart.png)
+
+
+!["Screenshot of Sign up page"](https://github.com/anithaamarnath/jungle-rails/blob/master/screenshot/singup.png)
+
+
+!["Screenshot of Create page"](https://github.com/anithaamarnath/jungle-rails/blob/master/screenshot/user_review_create.png)
+
+!["Screenshot of review_edit and delete"](https://github.com/anithaamarnath/jungle-rails/blob/master/screenshot/review_Delete.png)
 
