@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_filter :authorize
 
   def index
     @products = Product.all.order(created_at: :desc)
@@ -6,7 +7,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find params[:id]
-    @reviews = @product.review
+    @reviews = @product.review.order(created_at: :desc)
   end
 
 
