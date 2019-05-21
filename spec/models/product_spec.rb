@@ -1,0 +1,66 @@
+require 'rails_helper'
+
+RSpec.describe Product, type: :model do
+
+describe 'Validations' do
+   # validation tests/examples here
+   it "is valid with name, price, quantity and category" do
+     cat1 = Category.find_or_create_by! name: 'Pet'
+     prod = Product.new(
+       name: 'Dogs',
+       price: 1000,
+       quantity: 20,
+       category: cat1
+     )
+     expect(prod).to be_valid
+   end
+
+   it "is not valid without a name" do
+     cat1 = Category.find_or_create_by! name: 'Pet'
+     prod = Product.new(
+       name: nil,
+       price: 1000,
+       quantity: 20,
+       category: cat1
+     )
+     expect(prod).to_not be_valid
+     expect(prod.errors.full_messages).to include("Name can't be blank")
+   end
+
+   it "is not valid without a price" do
+     cat1 = Category.find_or_create_by! name: 'Pet'
+     prod = Product.new(
+       name: 'Dogs',
+       price: nil,
+       quantity: 20,
+       category: cat1
+     )
+     expect(prod).to_not be_valid
+     expect(prod.errors.full_messages).to include("Price can't be blank")
+   end
+
+   it "is not valid without a quantity" do
+     cat1 = Category.find_or_create_by! name: 'Pet'
+     prod = Product.new(
+       name: 'Dogs',
+       price: 1000,
+       quantity: nil,
+       category: cat1
+     )
+     expect(prod).to_not be_valid
+     expect(prod.errors.full_messages).to include("Quantity can't be blank")
+   end
+
+   it "is not valid without a category" do
+     cat1 = Category.find_or_create_by! name: 'Pet'
+     prod = Product.new(
+       name: 'Dogs',
+       price: 1000,
+       quantity: 20,
+       category: nil
+     )
+     expect(prod).to_not be_valid
+     expect(prod.errors.full_messages).to include("Category can't be blank")
+   end
+ end
+end
